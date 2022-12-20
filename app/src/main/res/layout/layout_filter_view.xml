@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/radio_group"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_40"
+    android:orientation="horizontal">
+
+    <RadioButton
+        android:id="@+id/tv_all"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_round_16dp_stroke"
+        android:buttonTint="@color/black"
+        android:gravity="center"
+        android:text="@string/all"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_12"
+        app:layout_constraintEnd_toStartOf="@id/tv_light"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/tv_light"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_weight="1"
+        android:background="@drawable/bg_round_16dp_stroke"
+        android:buttonTint="@color/black"
+        android:gravity="center"
+        android:text="@string/light"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_12"
+        app:layout_constraintEnd_toStartOf="@id/tv_medium"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/tv_all"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/tv_medium"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_weight="1"
+        android:background="@drawable/bg_round_16dp_stroke"
+        android:buttonTint="@color/black"
+        android:gravity="center"
+        android:text="@string/medium"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_12"
+        app:layout_constraintEnd_toStartOf="@id/tv_hard"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/tv_light"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/tv_hard"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_weight="1"
+        android:background="@drawable/bg_round_16dp_stroke"
+        android:buttonTint="@color/black"
+        android:gravity="center"
+        android:text="@string/hard"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/tv_medium"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</RadioGroup>

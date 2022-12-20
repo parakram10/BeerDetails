@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">BeerDetails</string>
+    <string name="app_name">My Beer Details</string>
+    <string name="all">All</string>
+    <string name="light">light</string>
+    <string name="medium">med</string>
+    <string name="hard">hard</string>
+    <string name="favourites">Favourites</string>
+    <string name="lovely_beers_only_for_you">Beers details for you</string>
+    <string name="beers">Beers</string>
+    <string name="description">Description</string>
+    <string name="tip_from_brewers">Tip from brewers:</string>
+    <string name="food_pairing">Food Pairing:</string>
+    <string name="ingredients">Ingredients:</string>
+    <string name="first_brewed">First Brewed: %s</string>
+    <string name="some_error_occurred">Some error occurred!!</string>
+    <string name="something_random_for_you">Selected something for you</string>
+    <string name="try_this_today_if_you_want">Try this today, if you want.</string>
+    <string name="favourite_list_is_empty_please_add_some_beer">Favourite list is empty. Please add some beer.</string>
+    <string name="my_beers">My Beers</string>
+    <string name="the_best_way_to_know_about_bears">The best way to know about bears</string>
+    <string name="no_beer_found_please_change_the_filter">No beer found. Please change the filter</string>
 </resources>

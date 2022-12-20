@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".presentation.view.RandomBeerActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/success_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="guideline, tv_name,iv_favourite, iv_beer, tv_description, tv_description_text, tv_tips, tv_tips_text, tv_brewed_at, tv_ingredients, tv_ingredients_text, tv_food_pairing, tv_food_pairing_text"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <View
+            android:id="@+id/view_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_bottom_round"
+            app:layout_constraintBottom_toTopOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_favourite"
+            android:layout_width="@dimen/size_28"
+            android:layout_height="@dimen/size_28"
+            android:layout_margin="@dimen/margin_16"
+            android:src="@drawable/heart_unselected"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/size_48"
+            android:layout_height="@dimen/size_48"
+            android:layout_margin="@dimen/margin_8"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="@dimen/margin_8"
+            android:src="@drawable/ic_baseline_chevron_left_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_beer"
+            android:layout_width="@dimen/size_60"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/margin_16"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@id/tv_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/beer_bottle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_16"
+            android:layout_marginBottom="@dimen/margin_32"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_size_16"
+            app:layout_constraintBottom_toTopOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:src="@drawable/beer_bottle"
+            tools:text="@string/beers" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_24"
+            android:text="@string/description"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/text_color_black_light"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_description_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_4"
+            android:ellipsize="end"
+            android:maxLines="6"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintEnd_toStartOf="@id/iv_beer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_description"
+            tools:text="descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_16"
+            android:text="@string/tip_from_brewers"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/text_color_black_light"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_description_text" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_tips_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_4"
+            android:layout_marginEnd="@dimen/margin_24"
+            android:fontFamily="@font/poppins_regular"
+            android:ellipsize="end"
+            android:maxLines="6"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintEnd_toStartOf="@id/iv_beer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_tips"
+            tools:text="descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_brewed_at"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_16"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_size_14"
+            android:fontFamily="@font/poppins_semibold"
+            app:layout_constraintEnd_toStartOf="@id/iv_beer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_tips_text"
+            tools:text="First Brewed: 09/2007" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/ingredients"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/text_color_black_light"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_brewed_at" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_ingredients_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_4"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ingredients"
+            tools:text="Spicy chicken tikka masala,Grilled chicken quesadilla,Caramel toffee cake" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_food_pairing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/food_pairing"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/text_color_black_light"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ingredients_text" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_food_pairing_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_16"
+            android:layout_marginVertical="@dimen/margin_4"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_food_pairing"
+            tools:text="Spicy chicken tikka masala,Grilled chicken quesadilla,Caramel toffee cake" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.4" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="80dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@color/shimmer_background"
+                    app:layout_constraintBottom_toTopOf="@id/view3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="32dp"
+                    android:background="@color/shimmer_background"
+                    app:layout_constraintBottom_toTopOf="@id/guideline1" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/shimmer_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/guideline1" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/shimmer_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view4" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/shimmer_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view5" />
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/shimmer_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view6" />
+
+                <View
+                    android:id="@+id/view10"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/shimmer_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view7" />
+
+                <View
+                    android:id="@+id/view9"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/shimmer_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view10" />
+
+                <View
+                    android:id="@+id/view8"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_margin="16dp"
+                    android:background="@color/shimmer_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

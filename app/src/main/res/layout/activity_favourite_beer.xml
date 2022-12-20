@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_favourite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:padding="@dimen/margin_8"
+        android:text="@string/favourites"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_16"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/shimmer_background"
+        app:layout_constraintBottom_toBottomOf="@id/tv_favourite"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_bears"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_favourite"
+        app:spanCount="2"
+        tools:itemCount="7"
+        tools:listitem="@layout/layout_beer_list_child_view" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_broken"
+        android:layout_width="@dimen/size_120"
+        android:layout_height="@dimen/size_120"
+        android:scaleType="fitXY"
+        android:src="@drawable/broken_bottle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="@dimen/size_48"
+        android:layout_height="@dimen/size_48"
+        android:indeterminateTint="@color/black"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:text="@string/favourite_list_is_empty_please_add_some_beer"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/text_size_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_broken" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
