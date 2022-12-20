@@ -6,14 +6,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.beerdetails.MainApplication
-import com.example.beerdetails.data.BeerDatabase
-import com.example.beerdetails.data.BeersApiService
-import com.example.beerdetails.data.BeersData
+import com.example.beerdetails.BeerServiceLocator
 import com.example.beerdetails.databinding.ActivityFavouriteBeerBinding
-import com.example.beerdetails.domain.BeerRepoImpl
-import com.example.beerdetails.domain.RetrofitHelper
-import com.example.beerdetails.presentation.BeerAdapter
 import com.example.beerdetails.presentation.FavouriteBeerAdapter
 import com.example.beerdetails.presentation.viewmodel.BeerDataViewModel
 import com.example.beerdetails.presentation.viewmodel.BeerDataViewModelFactory
@@ -36,13 +30,8 @@ class FavouriteBeerActivity : AppCompatActivity() {
         binding = ActivityFavouriteBeerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val apiService: BeersApiService =
-            RetrofitHelper.getInstance().create(BeersApiService::class.java)
-
-        val database = BeerDatabase.getDatabase(applicationContext)
-
         viewModel = ViewModelProvider(
-            this, BeerDataViewModelFactory(BeerRepoImpl(apiService, database))
+            this, BeerDataViewModelFactory(BeerServiceLocator.getRepo(this))
         )[BeerDataViewModel::class.java]
 
         binding.rvBears.adapter = adapter

@@ -7,11 +7,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.beerdetails.BeerServiceLocator
 import com.example.beerdetails.R
-import com.example.beerdetails.data.*
+import com.example.beerdetails.data.BeerEntity
+import com.example.beerdetails.data.BeerPreference
+import com.example.beerdetails.data.BeersData
 import com.example.beerdetails.databinding.ActivityBeerDescriptionScreenBinding
-import com.example.beerdetails.domain.BeerRepoImpl
-import com.example.beerdetails.domain.RetrofitHelper
 import com.example.beerdetails.presentation.viewmodel.BeerDataViewModel
 import com.example.beerdetails.presentation.viewmodel.BeerDataViewModelFactory
 
@@ -37,13 +38,9 @@ class BeerDescriptionScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityBeerDescriptionScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val apiService: BeersApiService =
-            RetrofitHelper.getInstance().create(BeersApiService::class.java)
-
-        val database = BeerDatabase.getDatabase(applicationContext)
 
         viewModel = ViewModelProvider(
-            this, BeerDataViewModelFactory(BeerRepoImpl(apiService, database))
+            this, BeerDataViewModelFactory(BeerServiceLocator.getRepo(this))
         )[BeerDataViewModel::class.java]
 
         beerData = intent?.getParcelableExtra(KEY_BEER_DATA)

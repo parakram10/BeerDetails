@@ -7,14 +7,11 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.beerdetails.BeerServiceLocator
 import com.example.beerdetails.R
-import com.example.beerdetails.data.BeerDatabase
 import com.example.beerdetails.data.BeerEntity
 import com.example.beerdetails.data.BeerPreference
-import com.example.beerdetails.data.BeersApiService
 import com.example.beerdetails.databinding.ActivityRandomBeerBinding
-import com.example.beerdetails.domain.BeerRepoImpl
-import com.example.beerdetails.domain.RetrofitHelper
 import com.example.beerdetails.presentation.viewmodel.BeerDataViewModel
 import com.example.beerdetails.presentation.viewmodel.BeerDataViewModelFactory
 
@@ -35,13 +32,8 @@ class RandomBeerActivity : AppCompatActivity() {
         binding = ActivityRandomBeerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val apiService: BeersApiService =
-            RetrofitHelper.getInstance().create(BeersApiService::class.java)
-
-        val database = BeerDatabase.getDatabase(applicationContext)
-
         viewModel = ViewModelProvider(
-            this, BeerDataViewModelFactory(BeerRepoImpl(apiService, database))
+            this, BeerDataViewModelFactory(BeerServiceLocator.getRepo(this))
         )[BeerDataViewModel::class.java]
 
         setUpObserver()

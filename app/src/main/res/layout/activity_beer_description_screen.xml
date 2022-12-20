@@ -65,6 +65,8 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_name"
             android:layout_width="match_parent"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
             android:layout_marginEnd="@dimen/margin_24"
