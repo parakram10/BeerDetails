@@ -1,6 +1,5 @@
 # BeerDetails
 
-Libraries and API used:
 
 1. Api: https://punkapi.com/documentation/v2
 2. RoomDatabase for saving favourite beers
